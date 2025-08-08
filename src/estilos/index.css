@@ -1,0 +1,50 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+
+/* Color Theme Swatches in Hex */
+.Muted_-Luxurious-Spa-Room-Decor-1-hex { color: #406473; }
+.Muted_-Luxurious-Spa-Room-Decor-2-hex { color: #CCD6D9; }
+.Muted_-Luxurious-Spa-Room-Decor-3-hex { color: #8AA696; }
+.Muted_-Luxurious-Spa-Room-Decor-4-hex { color: #667302; }
+.Muted_-Luxurious-Spa-Room-Decor-5-hex { color: #F2B694; }
+
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color:#406473;
+}
+
+main{
+    background-color: #CCD6D9;
+    width: 92vw;
+    height: 92vh;
+    border: 1px solid goldenrod;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px #f2f2f293;
+}
+
+
+
+.titulo,h2,h3{
+    padding: 10px;
+    color: #667302;
+    text-align: center;
+    text-shadow: 1px 1px #6a348183;
+}
+
+p{
+    color: #4e5800;
+    text-align: left;
+    text-shadow: 1px 1px #2c310073;
+}

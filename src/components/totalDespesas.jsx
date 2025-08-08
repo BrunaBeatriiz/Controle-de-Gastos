@@ -5,7 +5,7 @@ const TotalDespesas = ({despesas}) => {
     const total = despesas.reduce((acc, despesa) => acc + parseFloat(despesa.valor),0);
 
     return(
-        <h3>Total Despesas:<br/>
+        <h3>Total das despesas:<br/>
         R$: {total.toFixed(2)}</h3>
     )
 }

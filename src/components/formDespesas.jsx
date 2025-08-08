@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Titulo from "./titulo";
 
 const FormDespesas = ({emClickAdicionar}) => {
     const [titulo, setTitulo] = useState("");
@@ -38,16 +39,17 @@ const FormDespesas = ({emClickAdicionar}) => {
 
                 setTitulo("");
                 setValor("");
-                setDada("");
+                setData("");
                 setCategoria("");
     }
 
     return (
-        <div>
+        <div className="form">
             <form action="" onSubmit={handleSubmit}>
                 <input
                 type="text" name="titulo" id="idtitulo"
                 value={titulo}
+                placeholder="Digite o nome da despesa:"
                 onChange={(event) => setTitulo(event.target.value)} />
                 <input type="date" 
                 name="data" id="id-data"
@@ -55,7 +57,7 @@ const FormDespesas = ({emClickAdicionar}) => {
                 onChange={(event) => setData(event.target.value)}
                  />
                 <select name="categoria" id="idcategoria" value={categoria} onChange={escolha}>
-                    <option value="">Selecione a categoria</option>
+                    <option value="">Selecione o tipo da despesa:</option>
                     {opDespesas.map((opcao) => (
                         <option key={opcao} value={opcao}>{opcao}</option>
                     ))}
@@ -64,10 +66,11 @@ const FormDespesas = ({emClickAdicionar}) => {
                 <input type="number" 
                 name="valor" id="idvalor"
                 value={valor} 
+                placeholder="Digite o valor da despesa:"
                 onChange={(event) => setValor(event.target.value)}
                 min="0"
                 step="0.01"/>
-              <button type="submit">Adicionar</button>
+              <button className="butAd" type="submit">Adicionar</button>
             </form>
         </div>
     )
