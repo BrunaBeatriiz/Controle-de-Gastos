@@ -1,5 +1,4 @@
 import React from "react"
-import { useState } from "react";
 import { useMemo } from "react";
 import FormDespesas from "../components/formDespesas";
 import TotalDespesas from "../components/totalDespesas";
@@ -37,6 +36,7 @@ const Despesas = ({despesas, setDespesas}) => {
     const ultimasCinco = useMemo(() => {
         return mostrarUltimoMes.slice(-5);
     },[mostrarUltimoMes])
+    // const ultimasCinco = despesas.slice(-5);
 
     const verMais = () => {
         navigate("/paginaListaFiltros");

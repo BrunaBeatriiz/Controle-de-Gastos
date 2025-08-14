@@ -1,13 +1,16 @@
 import React from "react";
-import Despesas from "../pages/Despesas";
+import calculoTotalDespesasPeriodoFixo from "./funçaoSomaDespesas";
 
 const TotalDespesas = ({despesas}) => {
-    const total = despesas.reduce((acc, despesa) => acc + parseFloat(despesa.valor),0);
+    const totalDespesas = calculoTotalDespesasPeriodoFixo(despesas);
 
     return(
-        <h3>Total das despesas:<br/>
-        R$: {total.toFixed(2)}</h3>
-    )
+    <h3>Total das despesas:<br/>
+    R$: {totalDespesas.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h3>
+)
+
+  
 }
 
 export default TotalDespesas;
+

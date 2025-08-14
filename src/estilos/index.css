@@ -46,5 +46,7 @@ main{
 p{
     color: #4e5800;
     text-align: left;
+    font-size: 1.1em;
     text-shadow: 1px 1px #2c310073;
 }
+

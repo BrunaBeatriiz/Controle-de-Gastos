@@ -56,7 +56,7 @@ const FormDespesas = ({emClickAdicionar}) => {
                 value={data}
                 onChange={(event) => setData(event.target.value)}
                  />
-                <select name="categoria" id="idcategoria" value={categoria} onChange={escolha}>
+                <select name="categoria" id="id-categoria" value={categoria} onChange={escolha}>
                     <option value="">Selecione o tipo da despesa:</option>
                     {opDespesas.map((opcao) => (
                         <option key={opcao} value={opcao}>{opcao}</option>

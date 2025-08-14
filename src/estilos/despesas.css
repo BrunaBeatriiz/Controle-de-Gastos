@@ -32,6 +32,12 @@ form>input, select{
     color: #ddfcc4;
     box-shadow: 1px 1px 2px #353b00;
 }
+.butAd:hover{
+    border: 1px solid #ffffff;
+    background-color: #40614e;
+    color: #f7fff0;
+    box-shadow: 1px 1px 2px #353b00;
+}
 
 
 section{
