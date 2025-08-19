@@ -1,47 +1,46 @@
 import React from "react";
-
+import Button from "./button";
 //o valor padrão da prop sempre sera um array vazio, as vezes a prop não é passado ou está indisponivel no momento da renderização.
-const ListaDespesas = ({ despesas =[], resumida = false,
-emClickExcluirDespesa }) => {
+const ListaDespesas = ({ despesas = [], resumida = false,
+    emClickExcluirDespesa }) => {
     if (despesas.length === 0) {
-        return (<p className={resumida? "": "estilop "}>Nenhuma despesa encotrada.</p>);
+        return (<p className={resumida ? "" : "estilop "}>Nenhuma despesa encotrada.</p>);
     }
 
     return (
         <ul id="lista">
             {/* //usamos parenteses para dizer que é um retorno automatico (explicito). */}
             {despesas.map((despesa) => (
-                <li className="displayflex"
-                key={despesa.id}>
-                    <p>
-                        {resumida? (despesa.titulo.toUpperCase())
-                    :(
-                    <>
-                     Nome: <br/> {despesa.titulo.toUpperCase()}
-                     </>
+                <li
+                    key={despesa.id}>
+                    {resumida ? (
+                        <div className="divResumida">
+                            <p>{despesa.titulo.toUpperCase()}</p>
+                            <p>{Number(despesa.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+                        </div>
+                    ) : (
+                        <div className="displayflex">
+                                <p> Nome: <br /> {despesa.titulo.toUpperCase()}</p>
+                                <p>R$:<br/> {despesa.valor}</p>
+                                <p>Data: <br/> {new Date(despesa.data).toLocaleDateString('pt-BR')}</p>
+                                <p>Natureza da despesa: <br/>{despesa.categoria}</p>
+                            <div>
+                                <Button onClick={() => emClickExcluirDespesa(despesa.id)}
+                                    className="buttonExcluir">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" /></svg>
+                                </Button>
+                                <Button className="buttonExcluir" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" /></svg>
+                                </Button>
+                            </div>
+
+
+                            </div>
                     )}
-                    </p>
-                    <p>R$: {despesa.valor}</p>
-                    { !resumida && (
-                        <>
-                    <p>Data: {new Date(despesa.data).toLocaleDateString('pt-BR')}</p>
-                    <p>Natureza da despesa: {despesa.categoria}</p>
-                    <button 
-                    onClick={() => emClickExcluirDespesa(despesa.id)}
-                    className="buttonExcluir">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
-                    </button>
-                    <button
-                    className="buttonExcluir"
-                    >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/></svg>
-                    </button>
-                    </>
-                    )}
-                </li>
-            ))}
-        </ul>
-    )
+                        </li>
+                    ))}
+                </ul>
+            )
 }
 
 export default ListaDespesas;

@@ -1,68 +1,66 @@
 import React from "react";
 import ListaDespesas from "../components/listaDespesas";
-import filtrarLista from "../components/funcaoFiltrarLista";
+import filtrarLista from "../functions/funcaoFiltrarLista";
 import { useState } from "react";
 import '../estilos/mostrarLista.css';
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../components/button";
 
 
-const MostrarListaFiltros = ({despesas, emClickExcluirDespesa}) => {
+const MostrarListaFiltros = ({ despesas, emClickExcluirDespesa }) => {
     const navigate = useNavigate();
 
-    const [categoriaEscolhida,setCategoriaEscolhida] = useState("");
+    const [categoriaEscolhida, setCategoriaEscolhida] = useState("");
     const [dataInicial, setDataInicial] = useState("");
     const [dataFinal, setDataFinal] = useState("");
 
-    const opDespesas = ["Moradia","Alimentação","Transporte","Saúde","Educação","Contas","Lazer","Pessoal","Outros"];
+    const opDespesas = ["Moradia", "Alimentação", "Transporte", "Saúde", "Educação", "Contas", "Lazer", "Pessoal", "Outros"];
 
-    const voltarPagina  = () => {
+    const voltarPagina = () => {
         navigate('/Despesas')
-    } 
-    const paginaTodasDespesas  = () => {
+    }
+    const paginaTodasDespesas = () => {
         navigate('/todasDespesas')
-    } 
+    }
 
 
     const mostrarUltimoMes = filtrarLista(despesas);
 
     const despesasFiltradas = useMemo(() => {
-        return filtrarLista(despesas,categoriaEscolhida,dataInicial,dataFinal);
-    },[despesas, categoriaEscolhida,dataInicial,dataFinal]);
+        return filtrarLista(despesas, categoriaEscolhida, dataInicial, dataFinal);
+    }, [despesas, categoriaEscolhida, dataInicial, dataFinal]);
 
-    return(
-        <main>
-              <div>
-                  <button className="buttonVoltar"
-                  onClick={voltarPagina}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#626d00"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
-                    </button>
-                  <select name="categoria"
-                  className="selectPagFiltros"
-                  onChange={(event) => setCategoriaEscolhida(event.target.value)} id="idcategoria" value={categoriaEscolhida} >
+    return (
+            <main className="mainLista">
+                <div className="divInputs">
+                    <Button className="buttonVoltar"
+                        onClick={voltarPagina}><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="24px" fill="#626d00"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" /></svg></Button>
+                    <select name="categoria"
+                        className="selectPagFiltros"
+                        onChange={(event) => setCategoriaEscolhida(event.target.value)} id="idcategoria" value={categoriaEscolhida} >
                         <option value="">Selecione o tipo da despesa:</option>
                         {opDespesas.map((opcao) => (
                             <option key={opcao} value={opcao}>{opcao}</option>
                         ))}
                         {/* //parenteses no map, para não usar um return */}
                     </select>
-              
-                <input type="date"
-                 name="data"
-                id="dataInicial"
-                value={dataInicial}
-                onChange={(event)=> setDataInicial(event.target.value)} />
-                <input type="date" 
-                name="data" 
-                id="dataFinal"
-                value={dataFinal}
-                onChange={(event)=> setDataFinal(event.target.value)} />
+                    <input type="date"
+                        name="data"
+                        id="dataInicial"
+                        value={dataInicial}
+                        onChange={(event) => setDataInicial(event.target.value)} />
+                    <input type="date"
+                        name="data"
+                        id="dataFinal"
+                        value={dataFinal}
+                        onChange={(event) => setDataFinal(event.target.value)} />
                 </div>
-              <ListaDespesas despesas={categoriaEscolhida? despesasFiltradas : mostrarUltimoMes} emClickExcluirDespesa={emClickExcluirDespesa}/>
-              <button onClick={paginaTodasDespesas }
-              >Exibir Todas Despesas</button>
-        </main>
+                <ListaDespesas despesas={categoriaEscolhida ? despesasFiltradas : mostrarUltimoMes} emClickExcluirDespesa={emClickExcluirDespesa} />
+                {/* <Button
+                className="button"
+                 onClick={paginaTodasDespesas}>Exibir Todas Despesas</Button> */}
+            </main>
     )
 }
 

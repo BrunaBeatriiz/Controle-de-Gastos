@@ -1,5 +1,5 @@
-function Titulo (props){
-    return(
+function Titulo(props) {
+    return (
         <h1 className="titulo">
             {props.children}
         </h1>

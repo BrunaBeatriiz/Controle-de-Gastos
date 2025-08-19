@@ -1,3 +1,8 @@
+main{
+    height: 92vh 
+}
+
+
 .displaycolumn{
     display: flex;
     flex-flow: row nowrap;
@@ -8,6 +13,12 @@
     width: 50%;
     padding: 10px;
     height: 60vh;
+}
+
+section{
+    width: 50%;
+    padding: 10px;
+    border-left: 1px solid #8AA696;
 }
 
 
@@ -22,35 +33,14 @@ form>input, select{
     color: #353b00;
 }
 
-.butAd{
-    width: 95%;
-    padding: 6px;
-    border-radius: 4px;
-    margin: 5px;
-    border: 1px solid #8AA696;
-    background-color: #8AA696;
-    color: #ddfcc4;
-    box-shadow: 1px 1px 2px #353b00;
-}
-.butAd:hover{
-    border: 1px solid #ffffff;
-    background-color: #40614e;
-    color: #f7fff0;
-    box-shadow: 1px 1px 2px #353b00;
-}
 
-
-section{
-    width: 50%;
-    padding: 10px;
-    border-left: 1px solid #8AA696;
-}
 
 h2{
     text-align: left;
-    font-size: 1.3em;
+    font-size: 1.1em !important;
     padding: 5px;
-    margin-left: -5px;
+    margin-left: -3px;
+   
 }
 
 .buttonForm{
@@ -76,11 +66,4 @@ section>ul>li{
     padding: 5px;
     border-radius: 6px;
     box-shadow: 1px 1px 2px #353b00a6;
-}
-
-h3{
-    text-align: left;
-    font-size: 1.1em;
-    padding: 5px;
-    margin-left: -5px;
 }
