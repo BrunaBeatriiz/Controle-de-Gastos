@@ -63,7 +63,7 @@ const Saldo = ({ saldo, setSaldo, despesas }) => {
                     </div>
                     <div className="divCard">
                         <h2>Saldo: </h2>
-                        <p className="textoSaldo">{calculoSaldoTotal}</p>
+                        <p className="textoSaldo" style={{marginTop:"-10px", marginLeft:"-1px"}}>{calculoSaldoTotal}</p>
                     </div>
                 </section>
             </div>

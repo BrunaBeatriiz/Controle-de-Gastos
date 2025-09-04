@@ -80,27 +80,26 @@ header{
 
 .divCard{
     /* background-color: #4d6c72; */
-    background-color: #ecf5f8;
+    background-color: #dde6e9;
     margin: 10px;
     padding-left: 4px;
-    height: 18%;
-    border: 1px solid #71a102;
+    height: 15%;
+    border: 1px solid #708b96;
     border-radius: 8px;
     box-shadow: 2px 2px 6px #353b0088;
 }
 
 .divCard>h2{
-    color: #353b00;
+    color:#353b00; 
+    font-size: 0.94em !important;
 }
 
 .divCard>p{
     color: #353b00;
     margin-left: 5px;
     font-weight: 600;
-    font-size: 1.0em;
+    margin-top: -4px;
+    font-size: 0.9em;
 }
 
 
-h2{
-    color: #be3c00;
-}
