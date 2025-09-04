@@ -23,11 +23,16 @@ const MostrarListaFiltros = ({ despesas, emClickExcluirDespesa }) => {
     const paginaTodasDespesas = () => {
         navigate('/todasDespesas')
     }
+    const paginaPrincipal = () => {
+        navigate('/')
+    }
 
 
     const mostrarUltimoMes = filtrarLista(despesas);
 
     const despesasFiltradas = useMemo(() => {
+        console.log(dataInicial);
+        console.log(dataFinal);
         return filtrarLista(despesas, categoriaEscolhida, dataInicial, dataFinal);
     }, [despesas, categoriaEscolhida, dataInicial, dataFinal]);
 
@@ -57,9 +62,18 @@ const MostrarListaFiltros = ({ despesas, emClickExcluirDespesa }) => {
                         onChange={(event) => setDataFinal(event.target.value)} />
                 </div>
                 <ListaDespesas despesas={categoriaEscolhida ? despesasFiltradas : mostrarUltimoMes} emClickExcluirDespesa={emClickExcluirDespesa} />
-                {/* <Button
-                className="button"
-                 onClick={paginaTodasDespesas}>Exibir Todas Despesas</Button> */}
+                <footer>
+                    <Button
+                    className="button"
+                     onClick={paginaTodasDespesas}>Exibir Todas Despesas</Button>
+                     <Button
+                    className="butHome"
+                    onClick={paginaPrincipal}
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="21px" fill="#626d00"
+                        ><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" /></svg>
+                    </Button>
+                </footer>
             </main>
     )
 }

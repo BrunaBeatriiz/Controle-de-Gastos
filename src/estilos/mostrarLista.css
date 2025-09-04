@@ -1,6 +1,5 @@
 .mainLista{
     height: auto !important;
-    margin: 250px 0px 30px 0px;
 }
 
 .divInputs{
@@ -46,9 +45,6 @@ input,select.selectPagFiltros{
 select.selectPagFiltros{
     width: 39%;
 }
-
-
-
 
 
 ul {
@@ -110,6 +106,7 @@ ul>li{
     margin-top: -1px;
 }
 
-.button{
-   
-}
+
+/* .button{
+  
+} */

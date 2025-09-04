@@ -21,8 +21,11 @@ const Dashboard = ({ despesas, saldo }) => {
         navigate('/Saldo');
     }
 
-    const paginaTodasDespesas = () => {
+    const paginaDespesasFiltros = () => {
         navigate('/paginaListaFiltros');
+    }
+    const paginaTodasDespesas = () => {
+        navigate('/todasDespesas');
     }
 
 
@@ -37,7 +40,7 @@ const Dashboard = ({ despesas, saldo }) => {
     return (
         <main>
             <Titulo>Painel Financeiro:</Titulo>
-            <div className="displaycolumn">
+            <div className="display-column">
                 <section className="display-flex">
                     <h2>Saldo: {calculoSaldoTotal}</h2>
                     <Button className="button"
@@ -54,14 +57,20 @@ const Dashboard = ({ despesas, saldo }) => {
                         </p>
                     </Button>
 
-                    <Button className="button" onClick={paginaTodasDespesas}>
+                    <Button className="button" onClick={paginaDespesasFiltros}>
                         <p>
                             Despesas do Mês
                             <svg className="butProx" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="22px" fill="#ddfcc4"><path d="m480-320 160-160-160-160-56 56 64 64H320v80h168l-64 64 56 56Zm0 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" /></svg>
                         </p>
                     </Button>
+                    <Button className="button" onClick={paginaTodasDespesas}>
+                        <p>
+                            Todas as Despesas
+                            <svg className="butProx" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="22px" fill="#ddfcc4"><path d="m480-320 160-160-160-160-56 56 64 64H320v80h168l-64 64 56 56Zm0 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" /></svg>
+                        </p>
+                    </Button>
                 </section>
-                <section>
+                <section className="secGrafico">
                     <div className="divGrafico">
                         <GraficoCategorias despesas={despesas} />
                     </div>
@@ -70,15 +79,16 @@ const Dashboard = ({ despesas, saldo }) => {
             </div>
             <section className="div-flex">
                 <div className="divCards">
-                    <h4>Total despesas do mês:{totalDespesas} </h4>
+                    <h3>Total despesas do mês: 
+                    <p className="margin">{totalDespesas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p></h3>
                 </div>
                 <div className="divCards">
-                    <h4>Gastador do mês: </h4> <br></br>
-                    <p>{maiorGastoCategoria.categoria}</p><br></br>
-                    <p>{maiorGastoCategoria.total.toFixed(2)}</p>
+                    <h3>Gastador do mês: </h3>
+                    <p>{maiorGastoCategoria.categoria}</p>
+                    <p>{maiorGastoCategoria.total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                 </div>
                 <div className="divCards">
-                    <h4>Próximos vencimentos:</h4>
+                    <h3>Próximos vencimentos:</h3>
                     {proxima? (
                         <p>{proxima.titulo} - {new Date(proxima.data).toLocaleDateString("pt-BR")}</p>
                     ):(
@@ -86,7 +96,7 @@ const Dashboard = ({ despesas, saldo }) => {
                     )}
                 </div>
                 <div className="divCards">
-                    <h4>Meta de Gastos</h4>
+                    <h3>Meta de Gastos:</h3>
                 </div>
             </section>
 

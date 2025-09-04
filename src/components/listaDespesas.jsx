@@ -12,7 +12,9 @@ const ListaDespesas = ({ despesas = [], resumida = false,
             {/* //usamos parenteses para dizer que é um retorno automatico (explicito). */}
             {despesas.map((despesa) => (
                 <li
-                    key={despesa.id}>
+                    key={despesa.id}
+                    style={resumida? {height:"14%"}: {}}
+                    >
                     {resumida ? (
                         <div className="divResumida">
                             <p>{despesa.titulo.toUpperCase()}</p>
