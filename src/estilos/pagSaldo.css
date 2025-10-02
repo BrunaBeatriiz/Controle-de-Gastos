@@ -52,8 +52,10 @@ header{
     padding: 2px;
     height: 35vh;
     margin: 10px;
+    margin-bottom: 25px;
     margin-left: 12px;
     border-left: none;
+    border: 3px solid black;
 }
 
 
