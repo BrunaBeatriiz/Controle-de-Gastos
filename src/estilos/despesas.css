@@ -2,9 +2,9 @@ main{
     height: 92vh 
 }
 
-h1{
+/* h1{
     margin-left: -35px;
-}
+} */
 
 .displaycolumn{
     display: flex;

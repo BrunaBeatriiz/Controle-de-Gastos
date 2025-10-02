@@ -31,7 +31,7 @@ body{
 main{
     background-color: #CCD6D9;
     width: 90vw;
-    min-height: 1050px !important;
+    min-height: 950px !important;
     margin: 0px 10px;
     border: 1px solid #71a102;
     border-radius: 8px;
@@ -43,12 +43,12 @@ main{
 .titulo{
     padding: 10px;
     color: #667302;
-    text-align: center;
+    text-align: center !important;
     text-shadow: 1px 1px #6a348183;
 }
 
 h2{
-    font-size: 1.1em !important;
+    font-size: 1.2em !important;
     padding: 10px;
     color: #667302;
     text-align: center;
