@@ -127,7 +127,7 @@ const Saldo = ({ saldo, setSaldo, despesas, metaGastos, setMetaGastos }) => {
                     {erro && <p style={{color: "rgb(226, 15, 0)", fontSize: "0.8em", marginLeft: "7px", textShadow: "1px 1px 2px #53720a83"}}>{erro}</p>}{sucesso && (<p style={{color:"#53720a", fontSize: "0.8em", marginLeft: "7px", textShadow: "1px 1px 2px #53720a83"}}>Meta de gastos adicionado com sucesso!</p>)}
                     </div>
                 </section>
-                <section>
+                <section className="secCard">
                     <div className="divCard">
                         <h2> Valor adicionado: </h2>
                         <p>{saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
