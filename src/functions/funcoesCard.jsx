@@ -1,3 +1,5 @@
+import calculoTotalDespesasPeriodoFixo from "./funçaoSomaDespesas";
+
 export function categoriaMaisGasta(despesas) {
     if (!despesas || despesas.length === 0) return {
         categoria: "Nenhuma", total: 0
@@ -40,4 +42,9 @@ export function proximaDespesa(despesas){
     const proxima = despesas.filter(dia => new Date(dia.data) >= hoje).sort((a,b) => new Date (a.data) - new Date(b.data))[0];
 
     return proxima || null;
+}
+
+
+export function calculoMeta (despesas, metaGastos){
+    
 }

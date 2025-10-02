@@ -10,7 +10,7 @@ import Button from "../components/button";
 
 
 
-const Dashboard = ({ despesas, saldo }) => {
+const Dashboard = ({ despesas, saldo, metaGastos }) => {
     const navigate = useNavigate();
 
     const irParaProxima = () => {
@@ -30,6 +30,12 @@ const Dashboard = ({ despesas, saldo }) => {
 
 
     const totalDespesas = calculoTotalDespesasPeriodoFixo(despesas);
+
+
+    const resultadosMetas = (metaGastos||0) - calculoTotalDespesasPeriodoFixo(despesas);
+    console.log("resultados", resultadosMetas);
+    const metaPorcento = metaGastos > 0? ((totalDespesas/metaGastos) * 100).toFixed(1):0;
+
     const calculoSaldoTotal = calculoSaldo(despesas, saldo);
 
     const maiorGastoCategoria = categoriaMaisGasta(despesas);
@@ -71,6 +77,7 @@ const Dashboard = ({ despesas, saldo }) => {
                     </Button>
                 </section>
                 <section className="secGrafico">
+                    <h2 className="h2Grafico">Disposição das despesas:</h2>
                     <div className="divGrafico">
                         <GraficoCategorias despesas={despesas} />
                     </div>
@@ -90,13 +97,15 @@ const Dashboard = ({ despesas, saldo }) => {
                 <div className="divCards">
                     <h3>Próximos vencimentos:</h3>
                     {proxima? (
-                        <p>{proxima.titulo} - {new Date(proxima.data).toLocaleDateString("pt-BR")}</p>
+                        <p>{proxima.titulo} - {new Date(proxima.data).toLocaleDateString("pt-BR")}<br/>{proxima.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
                     ):(
                         <p>Não há despesas futuras</p>
                     )}
                 </div>
                 <div className="divCards">
-                    <h3>Meta de Gastos:</h3>
+                    <h3 className="marginH3">Meta de Gastos:</h3>
+                    <p className="fontSize">{resultadosMetas.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} restantes.</p>
+                    <p className="fontSize">{metaPorcento}% foi atingida.</p>
                 </div>
             </section>
 

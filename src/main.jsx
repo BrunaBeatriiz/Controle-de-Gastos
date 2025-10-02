@@ -29,6 +29,22 @@ import calculoTotalDespesasPeriodoFixo from './functions/funçaoSomaDespesas'
       }
     });
 
+    const [metaGastos, setMetaGastos] = useState(() => {
+      const metaSalva = localStorage.getItem("metaGastos");
+      try {
+          return metaSalva ? parseFloat(metaSalva) : 0;
+      } catch (error) {
+          console.error("erro ao ler o saldo do localstorage:", error);
+          return 0;
+      }
+  });
+
+
+  useEffect(() => {
+      localStorage.setItem("metaGastos", metaGastos.toString());
+  }, [metaGastos]);
+
+
     useEffect(() => {
       localStorage.setItem("despesas", JSON.stringify(despesas));
     }, [despesas]);
@@ -52,7 +68,7 @@ import calculoTotalDespesasPeriodoFixo from './functions/funçaoSomaDespesas'
       const router = createBrowserRouter([
         {
           path: "/",
-          element: <Dashboard saldo={saldo} setSaldo={setSaldo} despesas={despesas}/>
+          element: <Dashboard saldo={saldo} setSaldo={setSaldo} despesas={despesas} metaGastos={metaGastos} setMetaGastos={setMetaGastos}/>
         },{
           path:"/Despesas",
           element:<Despesas despesas={despesas} setDespesas={setDespesas}/>,
@@ -63,7 +79,7 @@ import calculoTotalDespesasPeriodoFixo from './functions/funçaoSomaDespesas'
         },
         {
           path:"/Saldo",
-          element: <Saldo  despesas={despesas} saldo={saldo} setSaldo={setSaldo}/>,
+          element: <Saldo  despesas={despesas} saldo={saldo} setSaldo={setSaldo} metaGastos={metaGastos} setMetaGastos={setMetaGastos}/>,
         },
         {
           path:"/todasDespesas",

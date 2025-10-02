@@ -1,5 +1,5 @@
 main{
-    height: 92vh !important; 
+    /* height: 92vh !important;  */
 }
 
 
@@ -24,19 +24,21 @@ form>input{
 .button{
     width: 95%;
     padding: 7px !important;
-    border-radius: 4px;
-    margin: 5px;
-    border: 1px solid #8AA696;
-    background-color: #8AA696 ;
-    color: #ddfcc4;
-    box-shadow: 1px 1px 2px #353b00;
 }
-.butAd:hover{
-    border: 1px solid #ffffff;
-    background-color: #40614e;
-    color: #f7fff0;
-    border-radius: 6px;
-    box-shadow: 1px 1px 2px #353b00;
+
+.divMeta{
+    margin-top: 50px;
+    border-top: 1px solid #8AA696;
+    height: 40%;
+}
+
+h3{
+    color:#667302; 
+    font-size: 1.2em !important;
+    margin: 8px 5px;
+}
+.formMeta>input{
+    margin: 4px 5px;
 }
 
 
@@ -80,22 +82,22 @@ header{
 
 .divCard{
     /* background-color: #4d6c72; */
-    background-color: #dde6e9;
+    background-color: #ced9ddcb;
     margin: 10px;
     padding-left: 4px;
     height: 15%;
-    border: 1px solid #708b96;
+    border: 1px solid #8AA696;
     border-radius: 8px;
     box-shadow: 2px 2px 6px #353b0088;
 }
 
 .divCard>h2{
-    color:#353b00; 
+    color:#667302; 
     font-size: 0.94em !important;
 }
 
 .divCard>p{
-    color: #353b00;
+    color: #626d00;
     margin-left: 5px;
     font-weight: 600;
     margin-top: -4px;
@@ -103,3 +105,110 @@ header{
 }
 
 
+/* main{
+    height: 92vh !important; 
+}
+
+
+.form{
+    width: 50%;
+    padding: 10px;
+    height: 60vh;
+}
+
+
+
+form>input{
+    width: 95%;
+    padding:8px !important;
+    border-radius: 4px;
+    margin: 5px;
+    border: 1px solid #8AA696;
+    background-color: #e9cab9ce;
+    color: #353b00;
+}
+
+.button{
+    width: 95%;
+    padding: 7px !important;
+}
+
+.divMeta{
+    margin-top: 50px;
+    border-top: 1px solid #8AA696;
+    height: 40%;
+}
+
+h3{
+    color:#667302; 
+    font-size: 1.2em !important;
+    margin: 8px 5px;
+}
+.formMeta>input{
+    margin: 4px 5px;
+}
+ */
+
+
+/* header{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    gap: 120px;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+.butHome{
+    padding: 3px;
+    height: 33px;
+    width: 30px;
+    margin-left: 17px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #CCD6D9;
+    border: 1px solid #626d00;
+    box-shadow: 1px 1px 2px rgba(24, 1, 1, 0.493);
+} */
+
+/* .butHome:hover{
+    background-color: #436d00;
+    border: 1px solid #ffffff; xxxxx
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.438);
+    fill:#ffffff;
+} */
+/* .butHome:hover svg path{
+    fill:#ffffff;
+} */
+
+
+
+/* .divCard{
+    background-color: #4d6c72; xxxxx
+    background-color: #ced9ddcb;
+    margin: 10px;
+    padding-left: 4px;
+    height: 15%;
+    border: 1px solid #8AA696;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px #353b0088;
+} */
+
+/* .divCard>h2{
+    color:#667302; 
+    font-size: 0.94em !important;
+}
+
+.divCard>p{
+    color: #626d00;
+    margin-left: 5px;
+    font-weight: 600;
+    margin-top: -4px;
+    font-size: 0.9em;
+}
+
+ */
