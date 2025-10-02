@@ -1,8 +1,10 @@
 main{
-    height: 92vh 
+   min-height: 750px;
 }
 
-
+.marginTitulo{
+    margin-left: -45px;
+}
 
 
 .form{

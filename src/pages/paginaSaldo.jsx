@@ -96,7 +96,7 @@ const Saldo = ({ saldo, setSaldo, despesas, metaGastos, setMetaGastos }) => {
                 <Titulo style={{ width: '80vw !important' }}>Meu Saldo:</Titulo>
             </header>
             <div className="displaycolumn">
-                <section className="form">
+                <section className="formSaldo">
                     <h3>Adicione um novo valor ao seu saldo:</h3>
                     <form
                         action="" onSubmit={adicionarSaldo}>

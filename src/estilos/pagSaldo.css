@@ -47,10 +47,10 @@ header{
 }
 
 
-.form{
-    width: 95% !important;
-    padding: 2px !important;
-    height: 40vh !important;
+.formSaldo{
+    width: 95%;
+    padding: 2px;
+    height: 35vh;
     margin: 10px;
     border-left: none;
 }
@@ -73,8 +73,10 @@ form>input{
 }
 
 .divMeta{
-    margin-top: 50px;
-    height: 40%;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    height: 48%;
+    padding: 1px;
 }
 
 h3{
