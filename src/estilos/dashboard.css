@@ -4,8 +4,8 @@
     margin-top: 12px;
     padding: 5px;
     margin: 5px;
-    /* margin-left: 15px; */
     border-bottom: 1px solid #667302;
+    border-left: none !important;
 }
 
 .butProx {

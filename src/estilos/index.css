@@ -31,7 +31,7 @@ body{
 main{
     background-color: #CCD6D9;
     width: 90vw;
-    min-height: 950px !important;
+    min-height:1000px !important;
     margin: 0px 10px;
     border: 1px solid #71a102;
     border-radius: 8px;
