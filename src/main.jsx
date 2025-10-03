@@ -6,7 +6,7 @@ import Despesas from './pages/Despesas'
 import MostrarListaFiltros from './pages/paginaListaFiltros'
 import Saldo from './pages/paginaSaldo'
 import TodasDespesas from './pages/todasDespesas'
-import calculoTotalDespesasPeriodoFixo from './functions/funçaoSomaDespesas'
+import './estilos/estilosTelasMedias.css';
 
   const App = () => {
     const [despesas, setDespesas] = useState(() => {

@@ -48,7 +48,7 @@ const Dashboard = ({ despesas, saldo, metaGastos }) => {
             <Titulo>Painel Financeiro:</Titulo>
             <div className="display-column">
                 <section className="display-flex">
-                    <h2>Saldo: {calculoSaldoTotal}</h2>
+                    <h2><p className="marginP">Saldo:</p> {calculoSaldoTotal}</h2>
                     <Button className="button"
                         onClick={paginaSaldo}>
                         <p>
