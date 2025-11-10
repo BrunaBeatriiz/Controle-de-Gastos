@@ -1,31 +1,51 @@
-const calculoTotalDespesasPeriodoFixo = (despesas) => {
-    const hoje = new Date();
-    let dataInicial, dataFinal;
+// const calculoTotalDespesasPeriodoFixo = (despesas) => {
+//     const hoje = new Date();
+//     let dataInicial, dataFinal;
 
-    if (hoje.getDate() >= 10) {
-        dataInicial = new Date(hoje.getFullYear(), hoje.getMonth(), 10);
-        dataFinal = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 10);
+//     if (hoje.getDate() >= 10) {
+//         dataInicial = new Date(hoje.getFullYear(), hoje.getMonth(), 10);
+//         dataFinal = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 10);
 
-    } else {
-        dataInicial = new Date(hoje.getFullYear(), hoje.getMonth() - 1, 10);
-        dataFinal = new Date(hoje.getFullYear(), hoje.getMonth(), 10);
-    }
+//     } else {
+//         dataInicial = new Date(hoje.getFullYear(), hoje.getMonth() - 1, 10);
+//         dataFinal = new Date(hoje.getFullYear(), hoje.getMonth(), 10);
+//     }
 
     
-    dataInicial.setHours(0,0,0,0);
-    dataFinal.setHours(0,0,0,0);
+//     dataInicial.setHours(0,0,0,0);
+//     dataFinal.setHours(0,0,0,0);
 
-    return despesas.filter(despesa => {
+//     return despesas.filter(despesa => {
+//         const dataDespesa = new Date(despesa.data);
+//         dataDespesa.setHours(0,0,0,0);
+
+//         return dataDespesa >= dataInicial && dataDespesa < dataFinal;
+
+//     }).reduce((acc, despesa) => acc + parseFloat(despesa.valor || 0), 0);
+
+//     // return despesas.reduce((acc, despesa) => acc + parseFloat(despesa.valor || 0),0);
+
+
+// }
+
+// export default calculoTotalDespesasPeriodoFixo;
+
+
+const calculoTotalDespesasPeriodoFixo = (despesas) => {
+    const hoje = new Date();
+    const mesAtual = hoje.getMonth();
+    const anoAtual = hoje.getFullYear();
+  
+    return despesas
+      .filter(despesa => {
         const dataDespesa = new Date(despesa.data);
-        dataDespesa.setHours(0,0,0,0);
-
-        return dataDespesa >= dataInicial && dataDespesa < dataFinal;
-
-    }).reduce((acc, despesa) => acc + parseFloat(despesa.valor || 0), 0);
-
-    // return despesas.reduce((acc, despesa) => acc + parseFloat(despesa.valor || 0),0);
-
-
-}
-
-export default calculoTotalDespesasPeriodoFixo;
+        return (
+          dataDespesa.getMonth() === mesAtual &&
+          dataDespesa.getFullYear() === anoAtual
+        );
+      })
+      .reduce((acc, despesa) => acc + parseFloat(despesa.valor || 0), 0);
+  };
+  
+  export default calculoTotalDespesasPeriodoFixo;
+  

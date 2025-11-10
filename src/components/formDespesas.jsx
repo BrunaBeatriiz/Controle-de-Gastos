@@ -70,7 +70,9 @@ const FormDespesas = ({ emClickAdicionar }) => {
                     onChange={(event) => setValor(event.target.value)}
                     min="0"
                     step="0.01" />
-                <Button className="button" type="submmit">Adicionar</Button>
+                <Button className="button" type="submit">Adicionar</Button>
+                
+
             </form>
         </div>
     )
