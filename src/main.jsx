@@ -6,6 +6,7 @@ import Despesas from './pages/Despesas'
 import MostrarListaFiltros from './pages/paginaListaFiltros'
 import Saldo from './pages/paginaSaldo'
 import TodasDespesas from './pages/todasDespesas'
+import Historico from './pages/historico'
 import './estilos/estilosTelasMedias.css';
 
   const App = () => {
@@ -38,6 +39,16 @@ import './estilos/estilosTelasMedias.css';
           return 0;
       }
   });
+
+    const [historicoDespesas, setHistoricoDespesas] = useState(()=>{
+      const historicoSalvo = localStorage.getItem("historicoDespesas");
+      try{
+        return historicoSalvo ? JSON.parse(historicoSalvo) : [];
+      }catch(error) {
+        console.log("erro ao tentar resgatar historico:", error);
+        return [];
+      }
+    })
 
 
   useEffect(() => {
@@ -84,6 +95,11 @@ import './estilos/estilosTelasMedias.css';
         {
           path:"/todasDespesas",
           element:<TodasDespesas despesas={despesas}  emClickExcluirDespesa={emClickExcluirDespesa}/>,
+        },
+        {
+          path:"/historico",
+          element: <Historico HistoricoDespesas={historicoDespesas} setHistoricoDespesas={setHistoricoDespesas}/>
+         
         },
       ]);
 
