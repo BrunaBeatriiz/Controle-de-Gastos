@@ -98,7 +98,7 @@ import './estilos/estilosTelasMedias.css';
         },
         {
           path:"/historico",
-          element: <Historico HistoricoDespesas={historicoDespesas} setHistoricoDespesas={setHistoricoDespesas}/>
+          element: <Historico historicoDespesas={historicoDespesas} setHistoricoDespesas={setHistoricoDespesas} despesas={despesas}/>
          
         },
       ]);
