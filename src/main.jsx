@@ -8,6 +8,7 @@ import Saldo from './pages/paginaSaldo'
 import TodasDespesas from './pages/todasDespesas'
 import Historico from './pages/historico'
 import './estilos/estilosTelasMedias.css';
+import HistoricoDetalhado from './pages/historicoDetalhado'
 
   const App = () => {
     const [despesas, setDespesas] = useState(() => {
@@ -98,7 +99,12 @@ import './estilos/estilosTelasMedias.css';
         },
         {
           path:"/historico",
-          element: <Historico historicoDespesas={historicoDespesas} setHistoricoDespesas={setHistoricoDespesas} despesas={despesas}/>
+          element: <Historico historicoDespesas={historicoDespesas} setHistoricoDespesas={setHistoricoDespesas} despesas={despesas} metaGastos={metaGastos} saldo={saldo}/>
+         
+        },
+        {
+          path:"/historicoDetalhado/:id",
+          element: <HistoricoDetalhado historicoDespesas={historicoDespesas}/>
          
         },
       ]);
