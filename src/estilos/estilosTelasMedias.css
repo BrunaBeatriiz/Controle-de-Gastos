@@ -1,12 +1,12 @@
 @charset "UTF-8";
-/* @media screen and (max-width: 640px) and (orientation: landscape) {
+@media screen and (max-width: 900px) and (orientation: landscape) {
     
     main{
         width: 85vw;
         background-color: red;
         
     }
-  } */
+  }
   
 
 @media screen and (min-width: 440px) and (max-width: 699px) {
@@ -79,6 +79,7 @@ h2{
     width: 80vw;
     margin-left: 10px;
     margin-top: 6px;
+    
 }
 
 
@@ -288,7 +289,8 @@ p{
     border-right: 1px solid #71a102;
     border-bottom: none;
     width: 50vw;
-    height: 62vh;
+    height: 70vh;
+    background-color: #353b00;
 }
 
 .secGrafico {
