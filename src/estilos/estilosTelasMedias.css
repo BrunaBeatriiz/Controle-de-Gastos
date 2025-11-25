@@ -3,8 +3,78 @@
     
     main{
         width: 85vw;
-        background-color: red;
+        background-color: rgb(136, 255, 0);
         
+    }
+    
+    .display-flex {
+        width: 85vw;
+        height: 60vh;
+        margin-bottom: 25px;
+    }
+    
+    .secGrafico {
+        border: none;
+        display: flex;
+        width: 90vw;
+        height: 30%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    
+    
+    .divGrafico {
+       
+        width: 40vw;
+        padding: 5px;
+        height: 35vh;
+    }
+    
+    .div-flex {
+        width: 80vw;
+        margin-left: 10px;
+        margin-top: 6px;
+        
+    }
+    
+    
+    
+    
+    
+    
+    .butProx {
+        margin-left:9px;
+    }
+    
+    
+    .divCards {
+        background-color:#ecf5f8;
+        width: 36vw;
+        padding: 10px;
+        height: 95px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        align-items: baseline;
+    }
+    
+    .divCards>h3 {
+        font-size: 0.9em !important;
+       
+    }
+    
+ 
+    
+    
+    
+    .form{
+        height: 40vh !important;
+    }
+    
+    
+    .marginTitulo{
+        margin-left: -40px;
+       
     }
   }
   
