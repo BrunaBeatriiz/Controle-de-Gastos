@@ -232,6 +232,7 @@ select.selectPagFiltros{
    body{
     width: 100vw;
     height:auto;
+    background-color: blueviolet;
     padding: 20px;
 }
 
