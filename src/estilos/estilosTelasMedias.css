@@ -1,10 +1,20 @@
 @charset "UTF-8";
+@media screen and (max-width: 640px) and (orientation: landscape) {
+    /* Estilos para celular deitado */
+    main{
+        width: 85vw;
+        background-color: red;
+        
+    }
+  }
+  
 
 @media screen and (min-width: 440px) and (max-width: 699px) {
     /* Estilo Main */
 
     main{
         width: 85vw;
+        background-color: yellow;
     }
 
 .titulo{
