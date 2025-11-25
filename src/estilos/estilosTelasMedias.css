@@ -9,43 +9,27 @@
     
     .display-flex {
         width: 85vw;
-        height: 60vh;
-        margin-bottom: 25px;
+        height:40vh;
+        margin-bottom: 15px;
         background-color: black;
     }
     
-    .secGrafico {
-        border: none;
-        display: flex;
-        width: 90vw;
-        height: 30%;
-        justify-content: center;
-        margin-bottom: 15px;
-    }
-    
-    
-    .divGrafico {
-       
-        width: 40vw;
-        padding: 5px;
-        height: 35vh;
-    }
     
     .div-flex {
         width: 80vw;
         margin-left: 10px;
         margin-top: 6px;
-        
+        background-color: gold;
     }
     
     
-    
-    
-    
-    
-    .butProx {
-        margin-left:9px;
+    .display-column{
+        height: 100vh;background-color: lightsalmon;
+        margin-bottom: 40px;
     }
+    
+    
+
     
     
     .divCards {
